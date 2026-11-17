@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solmar Heist — Open-World Crime in Solmar Bay</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.min.js"
+  }
+}
+</script>
+</head>
+<body data-screen="title">
+<div id="app"></div>
+
+<div id="hud">
+  <div id="top-right">
+    <div id="stars">☆☆☆☆☆</div>
+    <div id="cash">$150</div>
+    <div id="health"><div id="health-fill"></div></div>
+    <div id="ammo"></div>
+  </div>
+  <div id="objective"><span id="objective-text"></span><span id="objective-dist"></span></div>
+  <div id="timer"></div>
+  <div id="messages"></div>
+  <div id="banner"><div id="banner-title"></div><div id="banner-sub"></div></div>
+  <div id="crosshair"></div>
+  <div id="bust"><div id="bust-label">BUSTED IN…</div><div id="bust-bar"><div id="bust-fill"></div></div></div>
+  <div id="speed"><span id="speed-value">0</span><span id="speed-unit">km/h</span></div>
+  <canvas id="minimap" width="190" height="190"></canvas>
+</div>
+<div id="damage"></div>
+
+<div id="title-screen" class="overlay show">
+  <div class="panel">
+    <h1>SOLMAR <span>HEIST</span></h1>
+    <p class="tagline">A sun-soaked open-world crime story in Solmar Bay</p>
+    <p class="story">You're a getaway driver with no car and a reputation to build. Steal wheels, outrun the Solmar PD, run five jobs for Rico's crew — and pull off the heist the whole bay will talk about.</p>
+    <div class="buttons">
+      <button id="btn-start" class="primary">▶ New Game</button>
+      <button id="btn-continue">↻ Continue</button>
+    </div>
+    <div class="controls">
+      <div><b>W A S D</b> move / drive</div>
+      <div><b>Shift</b> sprint</div>
+      <div><b>E</b> steal / enter / exit car</div>
+      <div><b>Mouse</b> aim &amp; shoot</div>
+      <div><b>F</b> punch</div>
+      <div><b>R</b> reload</div>
+      <div><b>Space</b> jump / handbrake</div>
+      <div><b>Right-drag</b> orbit camera</div>
+      <div><b>P / Esc</b> pause</div>
+      <div><b>M</b> sound on / off</div>
+    </div>
+    <p class="fine">An original game: its city, characters, vehicles, story and sounds were made for this entry. No network, no install — progress saves in your browser.</p>
+  </div>
+</div>
+
+<div id="pause-screen" class="overlay">
+  <div class="panel small">
+    <h2>PAUSED</h2>
+    <p class="tagline">Solmar Bay waits for no one. Except now.</p>
+    <div class="buttons column">
+      <button id="btn-resume" class="primary">▶ Resume</button>
+      <button id="btn-mute">🔊 Sound: On</button>
+      <button id="btn-restart">↻ Restart game</button>
+      <button id="btn-quit">⌂ Back to title</button>
+    </div>
+  </div>
+</div>
+
+<div id="end-screen" class="overlay">
+  <div class="panel small">
+    <h2 id="end-title">BUSTED</h2>
+    <p id="end-sub" class="tagline"></p>
+  </div>
+</div>
+
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
